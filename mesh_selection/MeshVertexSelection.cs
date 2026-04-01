@@ -224,8 +224,8 @@ namespace g3
             int nVerts = Selected.Count;
             int[] verts = new int[nVerts];
             int i = 0;
-            foreach (int vid in Selected)
-                verts[i++] = vid;
+            gParallel.ForEach (Selected, (vid) => verts[i++] = vid);
+                //verts[i++] = vid;
             return verts;
         }
 
